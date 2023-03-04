@@ -1,0 +1,12 @@
+{
+  "name": "mi-proyecto-node",
+  "version": "1.0.0",
+  "description": "proyecto node",
+  "main": "firts-proyectonode.js",
+  "scripts": {
+    "hola": "Hola, este es mi primer ejercicio con Node en el mejor Bootcamp de programación del mundo, gracias",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pascuas",
+  "license": "ISC"
+}
