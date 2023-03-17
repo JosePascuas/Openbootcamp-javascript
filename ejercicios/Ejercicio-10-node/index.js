@@ -15,6 +15,6 @@ function createCustomError() {
 
 try {
   createCustomError()
-} catch (error) {
+} catch {
   logger.error("esto es un error");
 }
