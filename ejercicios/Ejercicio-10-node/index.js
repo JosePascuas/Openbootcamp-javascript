@@ -1,18 +1,20 @@
-const Mensaje = saludo=> {
-  if (typeof saludo === "string"){
-    return "Hola bienvenido"
-  } 
-  throw new Error("hola el valor que acabas de ingresar no es de tipo string, corrigelo mi pez")
+const winston = require('winston');
 
+const logger = winston.createLogger({
+  level: 'error',
+  format: winston.format.json(),
+  defaultMeta: { service: 'my-service' },
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ]
+});
+
+function createCustomError() {
+  throw new Error( "Este es un mensaje personalizado");
 }
-
-const PrimerMensaje= 8
 
 try {
-  const ok= Mensaje(PrimerMensaje)
-  console.log(ok + " se esta ejecuentando de manera correcta")
-
-}catch (e){
-  console.error(`${e}`)
+  createCustomError()
+} catch (error) {
+  logger.error("esto es un error");
 }
-
